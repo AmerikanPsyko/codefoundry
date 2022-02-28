@@ -1,0 +1,71 @@
+/* Colors used:
+Primary: #5B565C
+Secondary: #AAA2AB
+Text: #040404
+*/
+
+/* Fonts
+font-family: 'League Gothic', sans-serif;
+*/
+
+body {
+    background-color: darkgrey;
+    font-family: 'League Gothic', sans-serif;
+    font-weight: 400px;
+    font-size: 32px;
+}
+
+.social {
+    text-decoration: underline;
+}
+
+a {
+    color: #5B565c;
+}
+
+a:visited {
+    color: #5B565C;
+}
+
+a:hover, a:focus{
+    text-decoration: none;
+}
+
+
+
+
+a:active {
+    color: darkgray;
+}
+
+button {
+    color: white;
+    font-size: 16px;
+    background-color: #5B565C;
+    border: none;
+    font-family: inherit;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: translateY(-10px);
+}
+
+.secondary_button {
+    background-color: #5B565C;
+    color: blanchedalmond;
+}
+
+.navigation-list_item--active {
+    text-decoration: none;
+}
+
+.inactive-link:hover {
+    color: black;
+    opacity: 1.6;
+}
