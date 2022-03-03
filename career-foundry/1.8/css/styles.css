@@ -13,7 +13,7 @@ header {
     color: #2b2b2b;
     font-family: 'League Gothic', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
   }
   
@@ -21,6 +21,15 @@ header {
     color: #040404;
     font-size: 32px;
   }
+
+  .about-main {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 28px;
+  }
+
   body {
     background-color: #AAA2AB;
     font-family: 'League Gothic', sans-serif;
@@ -61,7 +70,7 @@ header {
   }
   
   button, .button {
-    font-family: inherit;
+    font-family: 'League Gothic', sans-serif;
     background-color: #5B565C;
     color: #040404;
     text-decoration: none;
@@ -77,6 +86,18 @@ header {
     cursor: pointer;
     opacity: 0.8;
   }
+  
+  .form {
+    font-family: 'League Gothic', sans-serif;
+    
+  }
+
+  .standard-label {
+    color: #040404;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 26px;
+  }
+
   
   .navigation-list__item--active {
     text-decoration: none;
