@@ -1,0 +1,19 @@
+List of issues to fix: 
+
+-Center footers across all pages
+-Fix spacing and visual alignment
+-Make the Berlin SVG smaller to fit better in the page
+-Update text styling sizes
+-Add a custom SVG name for inline Nav
+-Add "actual" profile picture
+-Add previous projects where I was teaching myself JS into the "work" page. All pages work, and apps are 100% functional. Feel free to play
+them even though they are very entry level!
+
+
+Linters Used: 
+-Visual Studio Code built in linter
+-View problem hotkey
+
+
+Issues: 
+-Issues are all screenshot in the attached "Work Section Errors and Fixes" folder
