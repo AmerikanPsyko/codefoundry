@@ -15,11 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
 </head>
 
-</head>
+
 <body>
    <!-- Nav -->
    <header class="page-header">
-    <h3 class="page-header__item">Mario La Porte</h3>
+    <img src="./images/mlaporte-logo.svg" alt="Mario La Porte" class="page-header__image">
     
     <!-- Nav -->
 
@@ -39,7 +39,7 @@
                 <a href="./contact.html" role="menuitem" class="navigation-list__item--active">Contact</a>
             </li>
             
-            </li>
+            
         </ul>
 
         
@@ -47,15 +47,16 @@
     </nav>
     </header>
      <!-- Contact -->
+     <section class="contact-info">
      <div class="about-main">
          Mario La Porte <br>
          Address: 123 Anytown, USA 00000 <br>
-         Tel:<a href="tel:1112221234">+1 111-222-1234</a> <br>
+         <h2>Tel:<a href="tel:1112221234">+1 111-222-1234</a></h2> <br>
          <a href="mailto:geekdouttechnology@gmail.com">Contact me via Email</a><br>
         </div>
     
     <!-- Form -->
-    <form action="" method="post" id="contact-form">
+    <form action="email" method="post" id="contact-form">
         <label class="standard-label" for="contact-email">Email:</label>
         <input type="email" id="contact-email" required>
 
@@ -63,14 +64,15 @@
         <input type="tel" id="telephone" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
 
         <label class="standard-label" for="message">Enter Message Here</label>
-        <textarea name="" id="message" maxlength="240" required></textarea>
+        <textarea name="text" id="message" maxlength="240" required></textarea>
         <input type="submit" value="Send">
     
     </form>
-     
+     </section>
 
     
     <!-- Footer -->
+    <div class="footer">
     <footer class="page-footer">
         <p class="social">Check me out on Social</p>
         <div class="social-media">
@@ -80,7 +82,7 @@
         </div>
     </footer>
 
-
+    </div>
 
 
      

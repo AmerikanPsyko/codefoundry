@@ -15,6 +15,14 @@ Text: #040404
 font-family: 'League Gothic', sans-serif;
 */
 
+* {
+  margin: 5px;
+  padding: 5px;
+  /*border: 1px solid grey;*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 header {
     color: #2b2b2b;
     font-family: 'League Gothic', sans-serif;
@@ -30,6 +38,10 @@ header {
 
   .about-main {
     font-size: 32px;
+  }
+
+  .contact-info {
+    text-align: center;
   }
 
   p {
@@ -123,6 +135,7 @@ header {
     color: #040404;
     font-family: 'League Gothic', sans-serif;
     font-size: 26px;
+    text-align: center;
   }
 
   
@@ -138,24 +151,34 @@ header {
   
   .profile__portrait {
     float: left;
-    width: 250px;
+    width: 200px;
     height: auto;
     margin-right: 40px;
     border-radius: 50%;
+    border: 3px solid black;
   }
   
   .page-footer {
     clear: both;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    text-align: center;
+    
+   
   }
   
+  .footer {
+    text-align: center;
+  }
+
   .profile {
     max-width: 700px;
     margin: 0 auto;
@@ -173,6 +196,7 @@ header {
     display: flex;
     width: 100%;
     padding: 20px;
+    text-align: center;
   }
   
   .page-header__item {
@@ -191,6 +215,20 @@ header {
     text-align: right;
   }
   
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  td, tr {
+    font-size: 26px;
+  }
+ 
+  .button {
+    font-size: 26px;
+    color: #2b2b2b;
+  }
+
   .navigation-list {
     list-style-type: none;
   }
@@ -200,7 +238,16 @@ header {
     margin-left: 15px;
   }
 
-
+  .berlin {
+    display: block;
+    text-align: center;
+  }
+  
+  .wrap-sheet {
+    display: block;
+    text-align: center;
+  }
+  
   /* start grid fallback */
   .grid-list__item {
     display: inline-block;
@@ -376,4 +423,5 @@ header {
     -webkit-animation-timing-function: linear;
             animation-timing-function: linear;
   }
+  
   
