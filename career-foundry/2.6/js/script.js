@@ -26,9 +26,30 @@ let pokemonRepository = (function (){
 
     //Updated loop from "for" to "forEach"
   pokemonRepository.getAll().forEach (function (pokemon) {
-    document.write(pokemon.name + " " + pokemon.type + " " + pokemon.height);
-    document.write('<p>');
+
+    // Calls on selecting 'pokemon-list' from DOM
+    let ul = document.querySelector('.pokemon-list');
+
+    //create element 'li'
+    let listItem = document.createElement('li');
+
+    //creates element 'button
+    let button = document.createElement('button');
+
+    //Append button to 'ul'
+    ul.appendChild(button);
+
+    //Adds inner text to button using pokemon.name to pull from Repository
+    button.innerText = pokemon.name;
+
+    //Adds class ID 'button-list/ to button
+    button.classList.add('button-list');
+
+    //Appends 'li' to 'ul' 
+    ul.appendChild(listItem);
   });
+
+  
     //Add "Dragonite" to the pokemonList, logged in console and printed to DOM
   pokemonRepository.add({name: 'Dragonite'});
   console.log(pokemonRepository.getAll());
