@@ -22,34 +22,67 @@ let pokemonRepository = (function (){
     add: add,
     getAll: getAll
   };
+  
   })();
 
-    //Updated loop from "for" to "forEach"
-  pokemonRepository.getAll().forEach (function (pokemon) {
+
+function showDetails(pokemon) {
+    console.log(pokemon.name);
+    }
+
+  // Add listener for button click and then passes the function to show details (Pokemon name)
+    function addListener (button, pokemon) {
+      button.addEventListener ('click', function () {
+        showDetails(pokemon);
+      })
+    }
+
+
+  // Function that adds list items: Button, InnerText, and gets query from DOM for .pokemon-list. Also appends pokemonList to button 
+    function addListItem(pokemon) {
+    
+      // Updated loop from "for" to "forEach"
+    pokemonRepository.getAll().forEach (function (pokemon) {
 
     // Calls on selecting 'pokemon-list' from DOM
-    let ul = document.querySelector('.pokemon-list');
+    let pokemonList = document.querySelector('.pokemon-list');
 
-    //create element 'li'
+    // Create element 'li'
     let listItem = document.createElement('li');
 
-    //creates element 'button
+    // Creates element 'button
     let button = document.createElement('button');
 
-    //Append button to 'ul'
-    ul.appendChild(button);
+    // Append button to 'ul'
+    pokemonList.appendChild(button);
 
-    //Adds inner text to button using pokemon.name to pull from Repository
+    // Adds inner text to button using pokemon.name to pull from Repository
     button.innerText = pokemon.name;
 
-    //Adds class ID 'button-list/ to button
+    // Adds class ID 'button-list/ to button
     button.classList.add('button-list');
 
-    //Appends 'li' to 'ul' 
-    ul.appendChild(listItem);
+    // Appends 'li' to 'ul' 
+    pokemonList.appendChild(listItem);
+     
+    // Adds listener for button click 
+    addListener(button, pokemon);
+
   });
+    
+  
+
+
+
+    
+
+   
 
   
+
     //Add "Dragonite" to the pokemonList, logged in console and printed to DOM
   pokemonRepository.add({name: 'Dragonite'});
   console.log(pokemonRepository.getAll());
+}
+
+addListItem();
