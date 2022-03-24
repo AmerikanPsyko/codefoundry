@@ -1,4 +1,4 @@
-// Begin IIFE 
+// Begin IIFE
 //Pokemon Repository list of Pokemon
 let pokemonRepository = (function () {
   let pokemonList = [
@@ -8,53 +8,53 @@ let pokemonRepository = (function () {
     { name: "Evee", type: "Dark", height: 4 },
   ];
 
-
+  //Function that will return all pokemon, retrieved from: pokemonList
   function getAll(pokemon) {
-    console.log("get all function")
     return pokemonList;
-  };
+  }
 
-
+  //Function that will add pokemon, and push to: pokemonList
   function add(pokemon) {
-    console.log("add pokemon")
     pokemonList.push(pokemon);
-  };
-
-
-
-
+  }
+  
+  function addListener(button, pokemon) {
+    button.addEventListener("click", function () {
+      showDetails(pokemon);
+    });
+  }
 
   function showDetails(pokemon) {
     console.log(pokemon.name);
   }
 
-  function addListener(button, pokemon) {
-    button.addEventListener('click', function () {
-      showDetails(pokemon);
-    })
+  function addListItem(pokemon) {
+    pokemonRepository.getAll().forEach(function (pokemon) {
+      let pokemonList = document.querySelector(".pokemon-list");
+
+      let listItem = document.createElement("li");
+
+      let button = document.createElement("button");
+
+      pokemonList.appendChild(button);
+
+      button.innerText = pokemon.name;
+
+      button.classList.add("button-list");
+
+      pokemonList.appendChild(listItem);
+
+      addListener(button, pokemon);
+    });
   }
 
-
+  //Return for add/getAll
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
   };
 
+
+  addListItem();
 })();
-
-function addListItem(pokemon) {
-  pokemonRepository.getAll().forEach(function (pokemon) {
-    let pokemonList = document.querySelector('.pokemon-list');
-    let listItem = document.createElement('li');
-    let button = document.createElement('button');
-    pokemonList.appendChild(button);
-    button.innerText = pokemon.name;
-    button.classList.add('button-list');
-    pokemonList.appendChild(listItem);
-    addListener(button, pokemon);
-  });
-
-
-}
-addListItem();
 
