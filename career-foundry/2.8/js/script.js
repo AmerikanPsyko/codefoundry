@@ -66,6 +66,7 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     });
   }
+  
 
   //Pass public functions to return
   return {
@@ -95,13 +96,29 @@ function addListItem(pokemon) {
   });
 }
 
-
 // Load pokemon list forEach loop
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     addListItem(pokemon);
   });
+
+
+// Modals
+
+function showModal () {
+  let modalContainer = document.querySelector ('#modal-container');
+  modalContainer.classList.add('is-visible');
+}
+
+document.querySelector('#show-modal').addEventListener('click', () => {
+  showModal();
 });
+
+
+
+});
+
+
 
 
 addListItem();
