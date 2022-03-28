@@ -43,7 +43,7 @@ div {
 display: none;
 };
 
-#modal-container {
+#modal-container.is-visible {
   display: block;
   position: fixed;
   padding: 20px;
