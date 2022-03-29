@@ -56,7 +56,7 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      console.log(pokemon)
     });
   }
 
@@ -74,13 +74,7 @@ let pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
-    
   };
-
-  //Modal functions
-  
-  
-
 })();
 
 // End IIFE
