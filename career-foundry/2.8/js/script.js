@@ -56,7 +56,7 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon);
+      console.log(pokemon);
     });
   }
 
@@ -74,41 +74,13 @@ let pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
+    
   };
 
   //Modal functions
-  function showModal() {
-    let modalContainer = document.querySelector("#modal-container");
-    modalContainer.classList.add("is-visible");
-    document.querySelector("#show-modal").addEventListener("click", () => {
-      showModal();
-      modalContainer.innerHTML = "";
+  
+  
 
-      let modal = document.createElement("div");
-      modal.classList.add("modal");
-
-      let closeButtonElement = document.createElement("button");
-      closeButtonElement.classList.add("modal-close");
-      closeButtonElement.innerText = "Close";
-
-      let titleElement = document.createElement("h1");
-      titleElement.innerText = title;
-
-      let contentElement = document.createElement("p");
-      contentElement.innerText = text;
-
-      modal.appendChild(closeButtonElement);
-      modal.appendChild(titleElement);
-      modal.appendChild(contentElement);
-      modal.appendChild(modal);
-
-      modalContainer.classList.add("is-visible");
-
-      document.querySelector("#show-modal").addEventListener("click", () => {
-        showModal("Modal title", "This is the Modal content");
-      });
-    });
-  }
 })();
 
 // End IIFE
