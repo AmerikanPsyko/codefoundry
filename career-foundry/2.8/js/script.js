@@ -42,7 +42,72 @@ let pokemonRepository = (function () {
     });
   }
 
+  //Modal section
+
+  function showModal() {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.add('is-visible');
+  }
   
+  document.querySelector('#show-modal').addEventListener('click', () => {
+    showModal();
+  });
+
+  function showModal(pokemon) {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.innerHTML = '';
+
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+    closeButtonElement.addEventListener('click', hideModal);
+
+    window.addEventListener('keydown', (e) => {
+      let modalContainer = document.querySelector('#modal-container');
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+          hideModal();
+        }
+    });
+
+    let titleElement = document.createElement('h1');
+    titleElement.innerText = pokemon.name;
+
+    let contentElement = document.createElement('p');
+    contentElement.innerText = pokemon.height;
+
+    let imageElement = document.createElement("img");
+    imageElement.classList.add("image-class");
+    imageElement.setAttribute ("src", pokemon.imageUrl);
+
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    modal.appendChild(imageElement);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
+
+    
+
+  
+
+    
+
+  }
+
+  document.querySelector('#show-modal').addEventListener('click', () => {
+    showModal('Modal Title', 'This is the modal content');
+  });
+
+  function hideModal() {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.remove('is-visible');
+  }
+
+  // End Modals
 
   //End Other API Functions
 
@@ -57,7 +122,7 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function (){
-      console.log(pokemon);
+      showModal(pokemon);
     });
   }
 
@@ -98,10 +163,8 @@ function addListItem(pokemon) {
 
 // Load pokemon list forEach loop
 pokemonRepository.loadList().then(function () {
-  pokemonRepository.getAll().forEach(function (pokemon) {
-    addListItem(pokemon);
-  });
+  addListItem();
+  
 });
-
 
 addListItem();
