@@ -3,6 +3,7 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+  
 
   //Other API functions start
 
@@ -26,7 +27,9 @@ let pokemonRepository = (function () {
       });
   }
 
-  // Load details fetch from API
+ 
+
+  // Load details of each pokemon on when clicked 
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url)
@@ -45,6 +48,10 @@ let pokemonRepository = (function () {
 
   //End Other API Functions
 
+  //Modals
+  
+  
+
   //Public Functions
   function getAll(pokemon) {
     return pokemonList;
@@ -54,9 +61,10 @@ let pokemonRepository = (function () {
     pokemonList.push(pokemon);
   }
 
+  //Once pokemon button is clicked, data is shown from API
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon);
+      console.log(pokemon)
     });
   }
 
@@ -66,66 +74,39 @@ let pokemonRepository = (function () {
     });
   }
 
+   //For each loop, create button, return data
+  function addListItem(pokemon) {
+    pokemonRepository.getAll().forEach(function (pokemon) {
+     let pokemonList = document.querySelector(".pokemon-list");
+      let listItem = document.createElement("li");
+      let button = document.createElement("button");
+      pokemonList.appendChild(button);
+      button.innerText = pokemon.name;
+      button.classList.add("button-list");
+      pokemonList.appendChild(listItem);
+      pokemonRepository.addListener(button, pokemon);
+    });
+  }
+
+
   //Pass public functions to return
   return {
     add: add,
     getAll: getAll,
     addListener: addListener,
+    addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
+    
   };
 
-  //Modal functions
-  function showModal() {
-    let modalContainer = document.querySelector("#modal-container");
-    modalContainer.classList.add("is-visible");
-    document.querySelector("#show-modal").addEventListener("click", () => {
-      showModal();
-      modalContainer.innerHTML = "";
-
-      let modal = document.createElement("div");
-      modal.classList.add("modal");
-
-      let closeButtonElement = document.createElement("button");
-      closeButtonElement.classList.add("modal-close");
-      closeButtonElement.innerText = "Close";
-
-      let titleElement = document.createElement("h1");
-      titleElement.innerText = title;
-
-      let contentElement = document.createElement("p");
-      contentElement.innerText = text;
-
-      modal.appendChild(closeButtonElement);
-      modal.appendChild(titleElement);
-      modal.appendChild(contentElement);
-      modal.appendChild(modal);
-
-      modalContainer.classList.add("is-visible");
-
-      document.querySelector("#show-modal").addEventListener("click", () => {
-        showModal("Modal title", "This is the Modal content");
-      });
-    });
-  }
+  
 })();
 
 // End IIFE
 
-//For each loop, create button, return data
-function addListItem(pokemon) {
-  pokemonRepository.getAll().forEach(function (pokemon) {
-    let pokemonList = document.querySelector(".pokemon-list");
-    let listItem = document.createElement("li");
-    let button = document.createElement("button");
-    pokemonList.appendChild(button);
-    button.innerText = pokemon.name;
-    button.classList.add("button-list");
-    pokemonList.appendChild(listItem);
-    pokemonRepository.addListener(button, pokemon);
-  });
-}
+
 
 // Load pokemon list forEach loop
 pokemonRepository.loadList().then(function () {
@@ -134,4 +115,4 @@ pokemonRepository.loadList().then(function () {
   });
 });
 
-addListItem();
+
