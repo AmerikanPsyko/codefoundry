@@ -46,16 +46,16 @@ let pokemonRepository = (function () {
   //Modal section
 
   function showModal() {
-    let modalContainer = document.querySelector("#modal-container");
+    let modalContainer = document.querySelector(".modal");
     modalContainer.classList.add("is-visible");
   }
 
-  document.querySelector("#show-modal").addEventListener("click", () => {
+  document.querySelector(".modal").addEventListener("click", () => {
     showModal();
   });
 
   function showModal(pokemon) {
-    let modalContainer = document.querySelector("#modal-container");
+    let modalContainer = document.querySelector("#modal-content");
     modalContainer.innerHTML = "";
 
     let modal = document.createElement("div");
@@ -158,9 +158,12 @@ let pokemonRepository = (function () {
 //For each loop, create button, return data
 function addListItem(pokemon) {
   pokemonRepository.getAll().forEach(function (pokemon) {
-    let pokemonList = document.querySelector(".pokemon-list");
+    let pokemonList = document.querySelector(".list-group");
     let listItem = document.createElement("li");
     let button = document.createElement("button");
+    listItem.classList.add("list-group-item");
+    button.classList.add("btn");
+    button.classList.add("btn-primary");
     pokemonList.appendChild(button);
     button.innerText = pokemon.name;
     button.classList.add("button-list");
