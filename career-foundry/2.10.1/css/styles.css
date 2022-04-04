@@ -11,7 +11,7 @@ div {
 
 
 
-.button-list {
+.button-list, .btn, .btn-secondary{
   background-color: antiquewhite;
   border: none;
   color: black;
@@ -38,11 +38,11 @@ div {
 
 /* Modal Section */
 
-#modal-container {
+.modal {
   display: none;
 }
 
-#modal-container.is-visible {
+.modal.is-visible {
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -63,7 +63,7 @@ div {
   text-align: center;
 }
 
-.modal {
+.modal-dialog {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
