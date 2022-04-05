@@ -30,8 +30,6 @@ div {
   
 }
 
-
-
 .pokemon-list {
   list-style-type: none;
   display: grid;
@@ -40,11 +38,11 @@ div {
 
 /* Modal Section */
 
-#showModal {
+#modal-container {
   display: none;
 }
 
-#showModal.is-visible {
+#modal-container.is-visible {
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
