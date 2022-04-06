@@ -67,6 +67,9 @@ let pokemonRepository = (function () {
     let pokemonImage = $('<img class=\'pokemon-modal-image\'>');
     pokemonImage.attr('src', item.imageUrl); 
 
+    document.querySelector("#Pokemon").addEventListener("click", () => {
+      showModal();
+    });
     
 
     modalTitle.append(pokemonName); 
