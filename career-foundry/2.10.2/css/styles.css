@@ -11,7 +11,9 @@ div {
 
 
 
-.btn, .btn-primary {
+
+
+.btn {
   background-color: antiquewhite;
   border: none;
   color: black;
@@ -28,6 +30,10 @@ div {
   color: black;
   border: 3px solid darkcyan;
   
+}
+
+.btn-primary {
+  display: none;
 }
 
 .pokemon-list {
