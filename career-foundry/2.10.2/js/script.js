@@ -4,8 +4,6 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
-  //Other API functions start
-
   // Load list fetch from API
   function loadList() {
     return fetch(apiUrl)
@@ -48,38 +46,6 @@ let pokemonRepository = (function () {
       });
   }
 
-  //Modal section
-
-  function showModal(pokemon) {
-    let modalTitle = document.querySelector(".modal-title");
-    let modalBody = document.querySelector(".modal-body");
-    let pokemonName = $("<h2>" + pokemon.name + "</h2>");
-    let pokemonHeight = $("<p>" + "Height: " + pokemon.height + "</p>");
-    let pokemonWeight = $("<p>" + "Weight: " + pokemon.weight + "</p>");
-    let pokemonAbilities = $("<p>" + "Abilities: " + pokemon.abilities + "</p>");
-    let pokemonImage = $("<img class='pokemon-modal-image'>");
-    let button = document.querySelector(".btn");
-
-    pokemonImage.attr("src", pokemon.imageUrl);
-    button.innerText = pokemon.name;
-    button.setAttribute("data-toggle", "modal");
-    button.setAttribute("data-target", "#exampleModal");
-    button.setAttribute("type", "button");
-    button.classList.add("btn", "btn-lg", "btn-block");
-
-    $(document).on("click", "button");
-
-    modalTitle.append(pokemonName);
-    modalBody.append(pokemonImage);
-    modalBody.append(pokemonHeight);
-    modalBody.append(pokemonWeight);
-    modalBody.append(pokemonAbilities);
-  }
-
-  // End Modals
-
-  //End Other API Functions
-
   //Public Functions
   function getAll(pokemon) {
     return pokemonList;
@@ -110,6 +76,38 @@ let pokemonRepository = (function () {
     loadDetails: loadDetails,
     showDetails: showDetails,
   };
+
+  //Modal section
+
+  function showModal(pokemon) {
+    let modalTitle = document.querySelector(".modal-title");
+    let modalBody = document.querySelector(".modal-body");
+    let pokemonName = $("<h2>" + pokemon.name + "</h2>");
+    let pokemonHeight = $("<p>" + "Height: " + pokemon.height + "</p>");
+    let pokemonWeight = $("<p>" + "Weight: " + pokemon.weight + "</p>");
+    let pokemonAbilities = $("<p>" + "Abilities: " + pokemon.abilities + "</p>"
+);
+    let pokemonImage = $("<img class='pokemon-modal-image'>");
+    let button = document.querySelector(".btn");
+
+    pokemonImage.attr("src", pokemon.imageUrl);
+    button.innerText = pokemon.name;
+    button.setAttribute("data-toggle", "modal");
+    button.setAttribute("data-target", "#exampleModal");
+    button.setAttribute("type", "button");
+    button.classList.add("btn", "btn-lg", "btn-block");
+    
+    
+    
+
+    modalTitle.append(pokemonName);
+    modalBody.append(pokemonImage);
+    modalBody.append(pokemonHeight);
+    modalBody.append(pokemonWeight);
+    modalBody.append(pokemonAbilities);
+  }
+
+  // End Modals
 })();
 
 // End IIFE
