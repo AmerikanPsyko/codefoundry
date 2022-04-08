@@ -36,6 +36,8 @@ div {
   display: none;
 }
 
+
+
 .pokemon-list {
   list-style-type: none;
   display: grid;

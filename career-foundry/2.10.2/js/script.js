@@ -93,7 +93,7 @@ let pokemonRepository = (function () {
     pokemonImage.attr("src", pokemon.imageUrl);
     button.innerText = pokemon.name;
     button.setAttribute("data-toggle", "modal");
-    button.setAttribute("data-target", "#exampleModal");
+    button.setAttribute("data-target", "#Pokemon");
     button.setAttribute("type", "button");
     button.classList.add("btn", "btn-lg", "btn-block");
     
