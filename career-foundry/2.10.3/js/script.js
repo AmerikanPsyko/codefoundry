@@ -107,7 +107,7 @@ let pokemonRepository = (function () {
   }
 
   document.querySelector("#showModal").addEventListener("click", () => {
-    showModal("Modal Title", "This is the modal content");
+    showModal.show("Modal Title", "This is the modal content");
   });
 
   function hideModal() {
