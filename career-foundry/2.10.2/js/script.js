@@ -75,6 +75,7 @@ let pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
+    showModal: showModal,
   };
 
   //Modal section
@@ -85,20 +86,18 @@ let pokemonRepository = (function () {
     let pokemonName = $("<h2>" + pokemon.name + "</h2>");
     let pokemonHeight = $("<p>" + "Height: " + pokemon.height + "</p>");
     let pokemonWeight = $("<p>" + "Weight: " + pokemon.weight + "</p>");
-    let pokemonAbilities = $("<p>" + "Abilities: " + pokemon.abilities + "</p>"
-);
+    let pokemonAbilities = $(
+      "<p>" + "Abilities: " + pokemon.abilities + "</p>"
+    );
     let pokemonImage = $("<img class='pokemon-modal-image'>");
-    let button = document.querySelector(".btn");
+    let button = document.querySelector("button");
 
     pokemonImage.attr("src", pokemon.imageUrl);
     button.innerText = pokemon.name;
-    button.setAttribute("data-toggle", "modal");
-    button.setAttribute("data-target", "#Pokemon");
+    button.setAttribute("data-toggle", ".modal");
+    button.setAttribute("data-target", "#triggerModal");
     button.setAttribute("type", "button");
     button.classList.add("btn", "btn-lg", "btn-block");
-    
-    
-    
 
     modalTitle.append(pokemonName);
     modalBody.append(pokemonImage);
@@ -118,7 +117,6 @@ function addListItem(pokemon) {
     let pokemonList = document.querySelector(".list-group");
     let listItem = document.createElement("li");
     let button = document.createElement("button");
-
     pokemonList.appendChild(button);
     button.innerText = pokemon.name;
     button.classList.add("btn");
@@ -131,5 +129,3 @@ function addListItem(pokemon) {
 pokemonRepository.loadList().then(function () {
   addListItem();
 });
-
-addListItem();
