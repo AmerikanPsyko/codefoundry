@@ -30,7 +30,7 @@ div {
   
 }
 
-.pokemon-list {
+.list-group {
   list-style-type: none;
   display: grid;
   width: 250px;
@@ -38,7 +38,7 @@ div {
 
 /* Modal Section */
 
-#modal-container {
+/* #modal-container {
   display: none;
 }
 
@@ -50,20 +50,20 @@ div {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); */
   
   /* to show it above other content */
-  z-index: 999; 
+  /* z-index: 999;  */
   
   /* to allow scrolling if the screen is not high enough*/
-  overflow: auto; 
+  /* overflow: auto;  */
   
   /* this is used to center the modal */
-  display: grid;
-  text-align: center;
-}
+  /* display: grid;
+  text-align: center; */
+/* } */
 
-.modal {
+/* .modal {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
@@ -72,7 +72,7 @@ div {
   width: 100%;
   max-width: 700px;
   text-align: center;
-}
+} */
 
 .modal-close {
   float: right;
@@ -83,10 +83,37 @@ div {
   text-decoration: underline;
 }
 
-.modal h1 {
+.modal-title {
   margin-top: 0;
 }
 
-.modal p {
+.modal-body {
   margin-bottom: 0;
+}
+
+#show-modal {
+  display: none;
+}
+
+
+/* Bootstrap Modal */
+
+.modal {
+  display: block;
+}
+
+.modal.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(171, 191, 192, 0.842);
+  z-index: 999;
+  overflow: auto;
+  display: inline-block;
+  text-align: center;
+
 }
