@@ -60,7 +60,7 @@ let pokemonRepository = (function () {
 
     let modal = document.querySelector('.modal')
 
-    let closeButtonElement = document.createElement("button");
+    let closeButtonElement = document.querySelector(".btn-close");
     // closeButtonElement.classList.add("modal-close");
     // closeButtonElement.innerText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
@@ -80,6 +80,7 @@ let pokemonRepository = (function () {
 
       modalContainer.addEventListener('click', (e) => {
         let target = e.target;
+        
           if (target === modalContainer) {
             hideModal();
           }
@@ -104,7 +105,8 @@ let pokemonRepository = (function () {
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
     modal.appendChild(imageElement);
-    // modalContainer.appendChild(modal);
+    // modal.appendChild(modal);
+    
     
 
     modalContainer.classList.add("is-visible");
@@ -165,12 +167,14 @@ function addListItem(pokemon) {
   pokemonRepository.getAll().forEach(function (pokemon) {
     let pokemonList = document.querySelector(".list-group");
     let listItem = document.createElement("li");
+    // listItem.document.createElement("group-list-item");
     
 
     let button = document.createElement("button");
     pokemonList.appendChild(button);
     button.innerText = pokemon.name;
-    button.classList.add("button-list");
+    // button.classList.add("group-list-item");
+    button.classList.add("btn-danger", "btn", "rounded-pill");
     pokemonList.appendChild(listItem);
     pokemonRepository.addListener(button, pokemon);
   });
