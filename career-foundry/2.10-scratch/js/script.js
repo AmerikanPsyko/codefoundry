@@ -47,7 +47,7 @@ let pokemonRepository = (function () {
 
   function showModal() {
     let modalContainer = document.querySelector(".modal");
-    modalContainer.document("is-visible");
+    modalContainer.document.querySelector("is-visible");
   }
 
   document.querySelector("#show-modal").addEventListener("click", () => {
@@ -70,6 +70,7 @@ let pokemonRepository = (function () {
         modalContainer.classList.contains("is-visible")
       ) {
         hideModal();
+        
       }
     });
 
@@ -95,13 +96,15 @@ let pokemonRepository = (function () {
 
     button.setAttribute("type", "button");
 
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modal.appendChild(imageElement);
+    modal.append(closeButtonElement);
+    modal.append(titleElement);
+    modal.append(contentElement);
+    modal.append(imageElement);
 
     modalContainer.classList.add("is-visible");
   }
+
+  
 
   document.querySelector("#show-modal").addEventListener("click", () => {
     showModal(pokemon);
@@ -110,11 +113,14 @@ let pokemonRepository = (function () {
   function hideModal() {
     let modalContainer = document.querySelector(".modal");
     modalContainer.classList.remove("is-visible");
+    
   }
 
+  
+  
   // End Modals
 
-  //End Other API Functions
+  
 
   //Public Functions
   function getAll(pokemon) {
@@ -146,6 +152,7 @@ let pokemonRepository = (function () {
     loadDetails: loadDetails,
     showDetails: showDetails,
     showModal: showModal,
+    hideModal: hideModal,
   };
 })();
 
@@ -158,14 +165,14 @@ function addListItem(pokemon) {
     let listItem = document.createElement("group-list-item");
 
     let button = document.createElement("button");
-    pokemonList.appendChild(button);
+    pokemonList.append(button);
     button.innerText = pokemon.name;
 
     button.classList.add("btn-danger", "btn", "rounded-pill");
     button.setAttribute("type", "button");
     button.setAttribute("style", "height: 75px");
 
-    pokemonList.appendChild(listItem);
+    pokemonList.append(listItem);
     pokemonRepository.addListener(button, pokemon);
   });
 }
@@ -175,4 +182,4 @@ pokemonRepository.loadList().then(function () {
   addListItem();
 });
 
-addListItem();
+// addListItem();
