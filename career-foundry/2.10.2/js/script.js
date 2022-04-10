@@ -138,14 +138,19 @@ let pokemonRepository = (function () {
     button.setAttribute("data-target", "#triggerModal");
     // button.setAttribute("type", "button");
     button.classList.add("btn", "btn-lg", "btn-block");
+    
 
     modalTitle.append(pokemonName);
-    modalBody.append(pokemonImage);
+    modalBody.push(pokemonImage);
     modalBody.append(pokemonHeight);
     modalBody.append(pokemonWeight);
     modalBody.append(pokemonAbilities)
 
     modalContainer.classList.add("is-visible");
+    while (modalBody.firstChild) {
+      modalBody.removeChild(modalBody.firstChild);
+    }
+
   }
 
   // document.querySelector("#list-group").addEventListener("click", () => {
