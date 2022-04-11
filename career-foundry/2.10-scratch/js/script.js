@@ -43,24 +43,13 @@ let pokemonRepository = (function () {
       });
   }
 
-  //Modal section
-
-  function showModal() {
-    let modalContainer = document.querySelector(".modal");
-    modalContainer.document.querySelector("is-visible");
-  }
-
-  document.querySelector("#show-modal").addEventListener("click", () => {
-    showModal(pokemon);
-  });
-
+  //Start Modal Section
   function showModal(pokemon) {
     let modalContainer = document.querySelector(".modal");
-
     let modal = document.querySelector(".modal");
 
+    //Start Modal Close functions
     let closeButtonElement = document.querySelector(".btn-close");
-
     closeButtonElement.addEventListener("click", hideModal);
 
     window.addEventListener("keydown", (e) => {
@@ -70,7 +59,6 @@ let pokemonRepository = (function () {
         modalContainer.classList.contains("is-visible")
       ) {
         hideModal();
-        
       }
     });
 
@@ -81,31 +69,32 @@ let pokemonRepository = (function () {
         hideModal();
       }
     });
+    //End Modal Close Functions
 
+    //Modal Title and Body (Shows Modal Content)
     let titleElement = document.querySelector(".modal-title");
     titleElement.innerText = pokemon.name;
-
     let contentElement = document.querySelector(".modal-body");
     contentElement.innerText = pokemon.height;
 
+    //Image Element
     let imageElement = document.createElement("img");
+    
     imageElement.classList.add("image-class");
     imageElement.setAttribute("src", pokemon.imageUrl);
+    titleElement.append (imageElement);
 
+
+    //Modal Clear
+    
+
+    //Button Element to trigger Modal
     let button = document.querySelector("#show-modal");
-
     button.setAttribute("type", "button");
-
-    modal.append(closeButtonElement);
-    modal.append(titleElement);
-    modal.append(contentElement);
-    modal.append(imageElement);
-
     modalContainer.classList.add("is-visible");
   }
 
-  
-
+  //Show and hide Modal
   document.querySelector("#show-modal").addEventListener("click", () => {
     showModal(pokemon);
   });
@@ -115,12 +104,7 @@ let pokemonRepository = (function () {
     modalContainer.classList.remove("is-visible");
     
   }
-
-  
-  
-  // End Modals
-
-  
+  // End Modal Section
 
   //Public Functions
   function getAll(pokemon) {
