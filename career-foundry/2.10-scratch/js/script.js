@@ -79,14 +79,12 @@ let pokemonRepository = (function () {
 
     //Image Element
     let imageElement = document.createElement("img");
-    
+
     imageElement.classList.add("image-class");
     imageElement.setAttribute("src", pokemon.imageUrl);
-    titleElement.append (imageElement);
-
+    titleElement.append(imageElement);
 
     //Modal Clear
-    
 
     //Button Element to trigger Modal
     let button = document.querySelector("#show-modal");
@@ -102,7 +100,6 @@ let pokemonRepository = (function () {
   function hideModal() {
     let modalContainer = document.querySelector(".modal");
     modalContainer.classList.remove("is-visible");
-    
   }
   // End Modal Section
 

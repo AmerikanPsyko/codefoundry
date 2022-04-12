@@ -1,0 +1,18 @@
+// 20220412102935
+// https://raw.githubusercontent.com/mydea/simple-pokedex-app/master/.eslintrc
+
+{
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "quotes": [
+        "error",
+        "single"
+      ]
+    }
+  }
