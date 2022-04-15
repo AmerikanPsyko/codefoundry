@@ -25,25 +25,45 @@ div {
 
 #show-modal {
   display: none;
+  
 }
 
 /* Bootstrap Modal */
 
-.modal {
-  display: block;
-}
+
 
 .modal.is-visible {
   position: fixed;
-  padding: 20px;
+  padding-top: 150px;
   box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(171, 191, 192, 0.842);
+  width: 50%;
+  height: 60%;
+  background: rgba(245, 245, 245, 0.979);
   z-index: 999;
   overflow: auto;
-  display: inline-block;
+  display: block;
   text-align: center;
+  margin-top: 150px;
+  margin-left: 450px;
+}
+
+.modal-container {
+  background-color: antiquewhite;
+}
+
+/* .main-modal {
+  align-items: center;
+  display: flex;
+  margin: auto;
+} */
+
+.list-group {
+  height: 100px;
+  margin-left: 220px;
+  margin-top: 100px;
+  
+}
+
+body {
+background-color: rgba(70, 59, 59, 0.5);
 }
