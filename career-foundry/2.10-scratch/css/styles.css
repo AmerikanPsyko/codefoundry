@@ -33,29 +33,29 @@ div {
 
 
 .modal.is-visible {
+  color: white;
   position: fixed;
   padding-top: 150px;
   box-sizing: border-box;
   width: 50%;
   height: 60%;
-  background: rgba(245, 245, 245, 0.979);
+  /* background: rgba(245, 245, 245, 0.979); */
   z-index: 999;
   overflow: auto;
   display: block;
   text-align: center;
   margin-top: 150px;
   margin-left: 450px;
+  background-image: url(../img/pokeball1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .modal-container {
   background-color: antiquewhite;
 }
 
-/* .main-modal {
-  align-items: center;
-  display: flex;
-  margin: auto;
-} */
 
 .list-group {
   height: 100px;
@@ -67,3 +67,5 @@ div {
 body {
 background-color: rgba(70, 59, 59, 0.5);
 }
+
+
