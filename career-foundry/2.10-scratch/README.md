@@ -25,7 +25,7 @@ Libraries Used:
 <hr>
 <br>
 <ul>
-<li><a href = "https://pokeapi.co/"></a></li>
+<li><a href = "https://pokeapi.co/">PokeAPI</a></li>
 <li>Bootstrap 5</li>
 <li>fetch-polyfill.js</li>
 <li>promise-polyfill.js</li>
