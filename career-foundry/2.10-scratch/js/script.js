@@ -44,6 +44,14 @@ let pokemonRepository = (function () {
       });
   }
 
+  // Sort Pokemon
+  
+ 
+
+
+
+  // Sort End
+
    
 
   //Start Modal Section

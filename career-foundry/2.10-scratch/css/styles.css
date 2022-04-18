@@ -68,4 +68,20 @@ body {
 background-color: rgba(70, 59, 59, 0.5);
 }
 
+.modal-footer {
+  padding-bottom: 10px;
+  display: block;
+  background-color: rgba(255, 0, 0, 0.39);
+  color: white;
+  max-height: max-content;
+}
 
+.modal-header {
+  display: block;
+}
+
+.h2-footer {
+  color: antiquewhite;
+  margin-top: 15px;
+  margin-left: -28px;
+}
