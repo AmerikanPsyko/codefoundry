@@ -10,6 +10,7 @@ Technical:
 <hr>
 <br>
 This application performs the following functions:
+<hr>
 <br>
 <ul>
 <li>Loads data from the Pokemon API: https://pokeapi.co/</li>
